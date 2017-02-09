@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SaleTrackerApi.Data;
 
 namespace SaleTrackerApi
 {
@@ -36,6 +37,8 @@ namespace SaleTrackerApi
         {
             // Add framework services.
             services.AddSingleton(_config);
+
+            services.AddDbContext<SaleTrackerContext>();
 
             services.AddMvc();
         }
