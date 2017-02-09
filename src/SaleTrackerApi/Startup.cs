@@ -46,10 +46,6 @@ namespace SaleTrackerApi
             loggerFactory.AddConsole(_config.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            //app.UseApplicationInsightsRequestTelemetry();
-
-            //app.UseApplicationInsightsExceptionTelemetry();
-
             app.UseMvc(config =>
             {
                 
