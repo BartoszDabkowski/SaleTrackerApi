@@ -10,12 +10,12 @@ namespace SaleTrackerApi.Data
 {
     public class SaleTrackerContext : DbContext
     {
-        private readonly IConfigurationRoot _config;
+        //private readonly IConfigurationRoot _config;
 
-        public SaleTrackerContext(IConfigurationRoot config, DbContextOptions options)
+        public SaleTrackerContext(/*IConfigurationRoot config,*/ DbContextOptions options)
             :base(options)
         {
-            _config = config;
+            //_config = config;
         }
 
         public DbSet<Store> Stores { get; set; }
@@ -23,10 +23,34 @@ namespace SaleTrackerApi.Data
         public DbSet<SalesLineItem> SalesLineItems { get; set; }
         public DbSet<Item> Items { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(_config[""]);
+            base.OnModelCreating(builder);
+
+            builder.Entity<Store>()
+              .Property(c => c.Name)
+              .IsRequired();
+
+            builder.Entity<Sale>()
+              .Property(c => c.DateTime)
+              .IsRequired();
+
+            builder.Entity<SalesLineItem>()
+              .Property(c => c.Quantity)
+              .IsRequired();
+
+            builder.Entity<Item>()
+              .Property(c => c.Name)
+              .IsRequired();
+            builder.Entity<Item>()
+              .Property(c => c.Description)
+              .IsRequired();
+            builder.Entity<Item>()
+              .Property(c => c.Price)
+              .IsRequired();
+            builder.Entity<Item>()
+              .Property(c => c.Weight)
+              .IsRequired();
         }
     }
 }
