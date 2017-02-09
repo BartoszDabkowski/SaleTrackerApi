@@ -173,4 +173,4 @@
 -resource:"C:\Users\bdabkows\Source\Repos\SaleTrackerApi\src\SaleTrackerApi\obj\Debug\netcoreapp1.0\SaleTrackerApidotnet-compile.deps.json",SaleTrackerApi.deps.json
 "C:\Users\bdabkows\Source\Repos\SaleTrackerApi\src\SaleTrackerApi\Program.cs"
 "C:\Users\bdabkows\Source\Repos\SaleTrackerApi\src\SaleTrackerApi\Startup.cs"
-"C:\Users\bdabkows\Source\Repos\SaleTrackerApi\src\SaleTrackerApi\Controllers\ValuesController.cs"
+"C:\Users\bdabkows\Source\Repos\SaleTrackerApi\src\SaleTrackerApi\Controllers\StoresController.cs"
