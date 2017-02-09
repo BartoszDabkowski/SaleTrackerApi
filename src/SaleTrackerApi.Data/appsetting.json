@@ -1,0 +1,5 @@
+﻿{
+  "Data": {
+    "ConnectionString": "Data Source=(localdb)\\MSSQLLocalDB;Database=SaleTrackerDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
+  } 
+}
